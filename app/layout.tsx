@@ -1,10 +1,10 @@
-import { Inter } from "next/font/google"
+import { Fira_Code } from "next/font/google"
 import { ReactNode } from "react"
 import "./globals.css"
 import { MINIAPP, MINIAPP_DESCRIPTION, MINIAPP_TITLE } from "./lib/constants"
 
-const inter = Inter({
-  variable: "--inter",
+const firaCode = Fira_Code({
+  variable: "--fira-code",
   weight: "variable",
   subsets: ["latin"],
 })
@@ -23,7 +23,7 @@ export default function RootLayout({
         <meta name="description" content={MINIAPP_DESCRIPTION} />
         <title>{MINIAPP_TITLE}</title>
       </head>
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <body className={`${firaCode.variable} antialiased`}>{children}</body>
     </html>
   )
 }
