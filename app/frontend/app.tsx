@@ -2,6 +2,7 @@ import clientErrorHandling from "@/lib/clientErrorsReporting"
 import Providers from "@/lib/providers"
 import { updateStore } from "@/lib/store"
 import sdk from "@farcaster/miniapp-sdk"
+import clsx from "clsx"
 import { useEffect } from "react"
 import { BrowserRouter, Route, Routes } from "react-router"
 import Header from "./components/Header"
@@ -44,11 +45,7 @@ export default function App() {
           </Routes>
           <Menu />
         </BrowserRouter>
-        {/* <img
-          src="/images/global/bg.svg"
-          alt="bg"
-          className={clsx("fixed top-0 left-0 w-screen h-screen object-fill -z-10")}
-        /> */}
+        <div className={clsx("fixed top-0 left-0 w-screen h-screen bg-linear-to-bl from-cyan-500 to-blue-500 -z-10")}></div>
       </Providers>
     </div>
   )

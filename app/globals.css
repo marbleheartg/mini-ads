@@ -10,8 +10,7 @@
   }
 
   body {
-    @apply bg-black font-medium text-white;
-    @apply font-(family-name:--fira-code);
+    @apply font-(family-name:--fira-code) font-medium text-white;
   }
 
   h1 {
@@ -20,10 +19,6 @@
 
   img {
     @apply pointer-events-none;
-  }
-
-  button {
-    @apply bg-white text-black px-3 py-1 pb-1.5 cursor-pointer rounded-lg;
   }
 
   input[type="text"] {
@@ -46,10 +41,6 @@
 }
 
 @layer utilities {
-  .glass-shine {
-    overflow: hidden;
-  }
-
   .glass-shine::before {
     content: "";
     position: absolute;
@@ -70,5 +61,20 @@
       top: 100%;
       left: 100%;
     }
+  }
+
+  @keyframes slideUpFromBottom {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-up {
+    animation: slideUpFromBottom 0.7s ease-out forwards;
   }
 }

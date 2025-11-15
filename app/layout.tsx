@@ -1,5 +1,6 @@
 import { Fira_Code } from "next/font/google"
 import { ReactNode } from "react"
+import Ad from "./frontend/components/Ad"
 import "./globals.css"
 import { MINIAPP, MINIAPP_DESCRIPTION, MINIAPP_TITLE } from "./lib/constants"
 
@@ -23,7 +24,10 @@ export default function RootLayout({
         <meta name="description" content={MINIAPP_DESCRIPTION} />
         <title>{MINIAPP_TITLE}</title>
       </head>
-      <body className={`${firaCode.variable} antialiased`}>{children}</body>
+      <body className={`${firaCode.variable} antialiased`}>
+        <Ad />
+        {children}
+      </body>
     </html>
   )
 }
