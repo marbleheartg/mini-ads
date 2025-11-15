@@ -23,7 +23,7 @@ const Ad = () => {
       className={clsx(
         "fixed bottom-0 left-0 w-full h-1/2 z-100",
         "flex flex-col justify-center items-center gap-5",
-        "p-3 rounded-t-4xl",
+        "p-6 rounded-t-4xl",
         "bg-white/30 border border-white/50",
         "backdrop-blur-xl backdrop-saturate-150",
         "text-sm",
@@ -32,8 +32,9 @@ const Ad = () => {
         v ? "animate-slide-up" : "hidden",
       )}
     >
+      <img className="max-w-full max-h-1/2" src="https://placehold.co/600x400" alt="ad" />
       <div>use this awesome mini app</div>
-      <a href="https://google.com" className={clsx("px-3 py-1 border rounded-xl", "cursor-pointer")}>
+      <a href="https://google.com" target="_blank" className={clsx("px-3 py-1 border rounded-xl", "cursor-pointer")}>
         open
       </a>
     </div>
