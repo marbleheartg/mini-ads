@@ -6,6 +6,7 @@ import { useSwipeable } from "react-swipeable"
 
 const Ad = () => {
   const [v, setV] = useState(false)
+  const [isClosing, setIsClosing] = useState(false)
 
   useEffect(() => {
     ;(async function () {
@@ -17,7 +18,13 @@ const Ad = () => {
   return (
     <div
       {...useSwipeable({
-        onSwipedDown: () => setV(prev => !prev),
+        onSwipedDown: () => {
+          setIsClosing(true)
+          setTimeout(() => {
+            setV(false)
+            setIsClosing(false)
+          }, 1000)
+        },
         trackMouse: true,
       })}
       className={clsx(
@@ -29,12 +36,18 @@ const Ad = () => {
         "text-sm",
         "glass-shine",
         "overflow-hidden",
-        v ? "animate-slide-up" : "hidden",
+        v ? "" : "hidden",
+        isClosing ? "animate-slide-down" : "animate-slide-up",
       )}
     >
-      <img className="max-w-full max-h-1/2" src="https://placehold.co/600x400" alt="ad" />
-      <div>use this awesome mini app</div>
-      <a href="https://google.com" target="_blank" className={clsx("px-3 py-1 border rounded-xl", "cursor-pointer")}>
+      <img className="max-w-full max-h-1/2" src="https://placehold.co/600x400" alt="ad-image" />
+      <div>try this awesome mini app</div>
+      <a
+        href="https://google.com"
+        target="_blank"
+        className={clsx("px-3 py-1 border rounded-xl", "cursor-pointer", "z-10")}
+        onClick={() => setV(false)}
+      >
         open
       </a>
     </div>

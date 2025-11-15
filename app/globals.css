@@ -66,7 +66,7 @@
   @keyframes slideUpFromBottom {
     0% {
       transform: translateY(100%);
-      opacity: 0;
+      opacity: 0.7;
     }
     100% {
       transform: translateY(0);
@@ -74,7 +74,22 @@
     }
   }
 
+  @keyframes slideDownToBottom {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 0.7;
+    }
+  }
+
   .animate-slide-up {
     animation: slideUpFromBottom 0.7s ease-out forwards;
+  }
+
+  .animate-slide-down {
+    animation: slideDownToBottom 0.7s ease-out forwards;
   }
 }
