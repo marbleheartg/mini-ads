@@ -30,7 +30,7 @@ const Ad = () => {
       className={clsx(
         "fixed bottom-0 left-0 w-full h-1/2 z-100",
         "flex flex-col justify-center items-center gap-5",
-        "p-6 rounded-t-4xl",
+        "p-6 pt-0 rounded-t-4xl",
         "bg-white/30 border border-white/50",
         "backdrop-blur-xl backdrop-saturate-150",
         "text-sm",
@@ -40,6 +40,7 @@ const Ad = () => {
         isClosing ? "animate-slide-down" : "animate-slide-up",
       )}
     >
+      <div className="w-12 h-1 bg-white rounded-full mb-4"></div>
       <img className="max-w-full max-h-1/2" src="https://placehold.co/600x400" alt="ad-image" />
       <div>try this awesome mini app</div>
       <a
