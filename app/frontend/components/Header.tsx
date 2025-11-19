@@ -1,24 +1,24 @@
 import clsx from "clsx"
 // import Image from "next/image"
+import { useAppKit, useAppKitAccount } from "@reown/appkit/react"
 import { store } from "../../lib/store"
 
 const Header = () => {
   const { user } = store()
 
+  const { address, isConnected } = useAppKitAccount()
+  const { open, close } = useAppKit()
+
   return (
-    <header className={clsx("fixed top-10 inset-x-0")}>
-      <div className={clsx("relative aspect-308/85 w-85 mx-auto", "text-center")}>
-        mini ads
-        {/* <Image src={"/images/global/logo.svg"} fill alt="logo" /> */}
+    <header className={clsx("fixed top-10 inset-x-7", "flex justify-between items-center")}>
+      <div className={clsx("text-xl p-1 px-2.5 pb-1.5 mb-0.5")}>
+        <span>mini</span>
+        <span className="pl-1.5">ads</span>
       </div>
 
-      {/* <Image
-        src={user?.pfpUrl || "/images/global/user.svg"}
-        width={19}
-        height={19}
-        alt="pfp"
-        className={clsx("absolute top-0 right-0", "rounded-full")}
-      /> */}
+      <button className={clsx("p-1 px-2.5 pb-1.5 mb-0.5", "border rounded-full", "cursor-pointer")} onClick={() => open({ view: "Connect" })}>
+        connect
+      </button>
     </header>
   )
 }
