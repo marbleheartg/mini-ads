@@ -17,7 +17,19 @@ createAppKit({
   adapters: [wagmiAdapter],
   networks: [base],
   projectId,
-  features: { analytics: false },
+  features: {
+    analytics: false,
+    swaps: false,
+    onramp: false,
+    allWallets: false,
+    // email: true,
+    socials: [
+      // "google", "x", "github", "discord", "apple", "facebook", "farcaster"
+    ],
+    // emailShowWallets: true,
+  },
+  enableNetworkSwitch: false,
+  enableWalletGuide: false,
 })
 
 const queryClient = new QueryClient({
